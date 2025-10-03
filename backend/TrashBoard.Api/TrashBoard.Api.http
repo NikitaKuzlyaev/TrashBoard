@@ -1,6 +1,6 @@
 @TrashBoard.Api_HostAddress = http://localhost:5274
 
-GET {{TrashBoard.Api_HostAddress}}/weatherforecast/
+GET {{TrashBoard.Api_HostAddress}}/api/random
 Accept: application/json
 
 ###
