@@ -1,6 +1,7 @@
 import { Component, signal, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/env';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class App {
   private readonly http = inject(HttpClient);
 
   fetchRandom() {
-    this.http.get<{ value: number }>('http://localhost:5000/api/random')
+    this.http.get<{ value: number }>(`${environment.apiBaseUrl}/random`)
       .subscribe((res) => this.randomValue.set(res.value));
   }
 }
