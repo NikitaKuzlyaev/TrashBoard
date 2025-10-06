@@ -1,3 +1,7 @@
 <Solution>
+  <Project Path="../ConsolePractice/ConsolePractice.csproj" Id="a680fe4b-099e-49fe-9fb9-5f72d280964d" />
+  <Project Path="../TrashBoard.Application/TrashBoard.Application.csproj" Id="a1dc42b7-33ce-40f7-92cb-0a4ad35ce6ff" />
+  <Project Path="../TrashBoard.Domain/TrashBoard.Domain.csproj" Id="1321b59c-0587-4a53-9725-ddb113b31750" />
+  <Project Path="../TrashBoard.Infrastructure/TrashBoard.Infrastructure.csproj" Id="29807a07-f50c-423d-8049-d3d72208c274" />
   <Project Path="TrashBoard.Api.csproj" />
 </Solution>

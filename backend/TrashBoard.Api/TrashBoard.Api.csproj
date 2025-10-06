@@ -5,8 +5,19 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-  <ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TrashBoard.Application\TrashBoard.Application.csproj" />
+    <ProjectReference Include="..\TrashBoard.Domain\TrashBoard.Domain.csproj" />
+    <ProjectReference Include="..\TrashBoard.Infrastructure\TrashBoard.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 
