@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using TrashBoard.Domain.Entities;
 using TrashBoard.Domain.ValueObjects;
+using ThreadEntity = TrashBoard.Domain.Entities.Thread;
 
 namespace TrashBoard.Infrastructure.Persistence
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Thread> Threads => Set<Thread>();
+        public DbSet<ThreadEntity> Threads => Set<ThreadEntity>();
         public DbSet<Board> Boards => Set<Board>();
         public DbSet<Page> Pages => Set<Page>();
 
@@ -18,7 +19,7 @@ namespace TrashBoard.Infrastructure.Persistence
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Thread>(b =>
+            modelBuilder.Entity<ThreadEntity>(b =>
             {
                 b.ToTable("threads");
                 b.HasKey(x => x.Id);
@@ -26,15 +27,11 @@ namespace TrashBoard.Infrastructure.Persistence
                 b.Property(x => x.Description).HasMaxLength(Domain.DomainRules.MaxThreadDescriptionLength);
                 b.Property(x => x.CreatorId).IsRequired();
                 b.Property(x => x.Visibility)
-                    .HasConversion(v => v.ToString(), s => s switch
-                    {
-                        "Public" => Visibility.Public,
-                        "Protected" => Visibility.Protected,
-                        _ => Visibility.Private
-                    })
-                    .HasColumnName("visibility")
-                    .IsRequired();
-
+                     .HasConversion(
+                         v => v.ToString(),
+                         s => Visibility.ParseVisibility(s))
+                     .HasColumnName("visibility")
+                     .IsRequired();
                 b.HasMany(typeof(Board), "Boards");
             });
 
@@ -46,17 +43,13 @@ namespace TrashBoard.Infrastructure.Persistence
                 b.Property(x => x.Description).HasMaxLength(Domain.DomainRules.MaxBoardDescriptionLength);
                 b.Property(x => x.ThreadId).IsRequired();
                 b.Property(x => x.Visibility)
-                    .HasConversion(v => v.ToString(), s => s switch
-                    {
-                        "Public" => Visibility.Public,
-                        "Protected" => Visibility.Protected,
-                        _ => Visibility.Private
-                    })
+                    .HasConversion(
+                        v => v.ToString(),
+                        s => Visibility.ParseVisibility(s))
                     .HasColumnName("visibility")
                     .IsRequired();
-
                 b.HasMany(typeof(Page), "Pages");
-                b.HasOne<Thread>()
+                b.HasOne<ThreadEntity>()
                     .WithMany("Boards")
                     .HasForeignKey(x => x.ThreadId)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -70,15 +63,11 @@ namespace TrashBoard.Infrastructure.Persistence
                 b.Property(x => x.Content).HasMaxLength(Domain.DomainRules.MaxPageContentLength);
                 b.Property(x => x.BoardId).IsRequired();
                 b.Property(x => x.Visibility)
-                    .HasConversion(v => v.ToString(), s => s switch
-                    {
-                        "Public" => Visibility.Public,
-                        "Protected" => Visibility.Protected,
-                        _ => Visibility.Private
-                    })
+                    .HasConversion(
+                        v => v.ToString(),
+                        s => Visibility.ParseVisibility(s))
                     .HasColumnName("visibility")
                     .IsRequired();
-
                 b.HasOne<Board>()
                     .WithMany("Pages")
                     .HasForeignKey(x => x.BoardId)

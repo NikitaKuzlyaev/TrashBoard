@@ -1,12 +1,13 @@
 using TrashBoard.Domain.Entities;
+using ThreadEntity = TrashBoard.Domain.Entities.Thread;
 
 namespace TrashBoard.Application.Interfaces
 {
     public interface IThreadRepository
     {
-        Task<Thread?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
-        Task AddAsync(Thread thread, CancellationToken cancellationToken = default);
-        Task RemoveAsync(Thread thread, CancellationToken cancellationToken = default);
+        Task<ThreadEntity?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+        Task AddAsync(ThreadEntity thread, CancellationToken cancellationToken = default);
+        Task RemoveAsync(ThreadEntity thread, CancellationToken cancellationToken = default);
     }
 }
 
