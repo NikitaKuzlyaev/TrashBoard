@@ -1,7 +1,4 @@
-﻿using System;
-using TrashBoard.Domain.DomainExceptions;
-using TrashBoard.Domain;
-using TrashBoard.Domain.Utills;
+﻿using TrashBoard.Domain.Utills;
 
 namespace TrashBoard.Domain.Entities
 {

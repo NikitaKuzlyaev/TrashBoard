@@ -29,5 +29,17 @@
         }
 
         public override int GetHashCode() => Value.GetHashCode();
+
+        public static Visibility ParseVisibility(string s)
+        {
+            return s switch
+            {
+                "Public" => Visibility.Public,
+                "Protected" => Visibility.Protected,
+                "Private" => Visibility.Private,
+                _ => throw new ArgumentOutOfRangeException(nameof(s), $"Unknown visibility: {s}")
+            };
+        }
+
     }
 }
