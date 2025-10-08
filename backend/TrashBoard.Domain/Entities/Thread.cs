@@ -9,7 +9,8 @@ namespace TrashBoard.Domain.Entities
         public string Name { get; private set; }
         public string Description { get; private set; }
         public int CreatorId { get; private set; }
-
+        public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; private set; }
         public Visibility Visibility { get; private set; }
         private readonly List<Board> boards = new List<Board>();
         public IReadOnlyCollection<Board> Boards => boards.AsReadOnly();

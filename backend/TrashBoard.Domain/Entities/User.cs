@@ -9,6 +9,9 @@ namespace TrashBoard.Domain.Entities
         public string Username { get; private set; }
         public string Login { get; private set; }
         private string PasswordHash { get; set; }
+        public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; private set; }
+
 
         private User()  // для EF
         {

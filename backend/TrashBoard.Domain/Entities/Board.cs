@@ -12,7 +12,8 @@ namespace TrashBoard.Domain.Entities
         public Visibility Visibility { get; private set; }
         private readonly List<Page> pages = new List<Page>();
         public IReadOnlyCollection<Page> Pages => pages.AsReadOnly();
-
+        public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; private set; }
         private Board() 
         {
             this.Name = null!; // null-forgiving operator -> будет инициализировано EF

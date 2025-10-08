@@ -10,7 +10,8 @@ namespace TrashBoard.Domain.Entities
         public string Content { get; private set; }
         public int BoardId { get; private set; }
         public Visibility Visibility { get; private set; }
-
+        public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; private set; }
         private Page()
         {
             this.Name = null!; // null-forgiving operator -> будет инициализировано EF
