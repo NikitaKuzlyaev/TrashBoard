@@ -2,22 +2,22 @@ using Microsoft.EntityFrameworkCore;
 using TrashBoard.Application.Interfaces;
 using ThreadEntity = TrashBoard.Domain.Entities.Thread;
 
-namespace TrashBoard.Infrastructure.Persistence
+namespace TrashBoard.Infrastructure.Persistence.Repositories
 {
     public class ThreadRepository : IThreadRepository
     {
         private readonly AppDbContext _db;
         public ThreadRepository(AppDbContext db) => _db = db;
 
-        public Task<ThreadEntity?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
-            => _db.Threads.Include(t => t.Boards).ThenInclude(b => b.Pages).FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
+        public Task<ThreadEntity?> GetByIdAsync(int id, CancellationToken ct = default)
+            => _db.Threads.Include(t => t.Boards).ThenInclude(b => b.Pages).FirstOrDefaultAsync(t => t.Id == id, ct);
 
-        public async Task AddAsync(ThreadEntity thread, CancellationToken cancellationToken = default)
+        public async Task AddAsync(ThreadEntity thread, CancellationToken ct = default)
         {
-            await _db.Threads.AddAsync(thread, cancellationToken);
+            await _db.Threads.AddAsync(thread, ct);
         }
 
-        public Task RemoveAsync(ThreadEntity thread, CancellationToken cancellationToken = default)
+        public Task RemoveAsync(ThreadEntity thread, CancellationToken ct = default)
         {
             _db.Threads.Remove(thread);
             return Task.CompletedTask;

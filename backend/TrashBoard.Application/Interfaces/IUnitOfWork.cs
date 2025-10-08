@@ -2,7 +2,7 @@ namespace TrashBoard.Application.Interfaces
 {
     public interface IUnitOfWork
     {
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+        Task<int> SaveChangesAsync(CancellationToken ct = default);
     }
 }
 

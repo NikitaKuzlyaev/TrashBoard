@@ -4,9 +4,9 @@ namespace TrashBoard.Application.Interfaces
 {
     public interface IPageRepository
     {
-        Task<Page?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
-        Task AddAsync(Page page, CancellationToken cancellationToken = default);
-        Task RemoveAsync(Page page, CancellationToken cancellationToken = default);
+        Task<Page?> GetByIdAsync(int id, CancellationToken ct = default);
+        Task AddAsync(Page page, CancellationToken ct = default);
+        Task RemoveAsync(Page page, CancellationToken ct = default);
     }
 }
 

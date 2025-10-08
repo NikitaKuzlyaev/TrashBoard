@@ -5,9 +5,9 @@ namespace TrashBoard.Application.Interfaces
 {
     public interface IThreadRepository
     {
-        Task<ThreadEntity?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
-        Task AddAsync(ThreadEntity thread, CancellationToken cancellationToken = default);
-        Task RemoveAsync(ThreadEntity thread, CancellationToken cancellationToken = default);
+        Task<ThreadEntity?> GetByIdAsync(int id, CancellationToken ct = default);
+        Task AddAsync(ThreadEntity thread, CancellationToken ct = default);
+        Task RemoveAsync(ThreadEntity thread, CancellationToken ct = default);
     }
 }
 
