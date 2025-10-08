@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TrashBoard.Application.Interfaces;
 using TrashBoard.Infrastructure.Persistence;
+using TrashBoard.Infrastructure.Persistence.Repositories;
 
 namespace TrashBoard.Infrastructure.Services
 {
@@ -21,6 +22,7 @@ namespace TrashBoard.Infrastructure.Services
             services.AddScoped<IThreadRepository, ThreadRepository>();
             services.AddScoped<IBoardRepository, BoardRepository>();
             services.AddScoped<IPageRepository, PageRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             return services;
