@@ -1,0 +1,43 @@
+/* Строгий XP-минимализм для домашней страницы */
+
+.home-page {
+  background: #eaeaea !important;
+  min-height: 100vh;
+}
+
+.xp-window {
+  border: 2px solid #0840a7;
+  background: linear-gradient(to bottom, #c7dbf9, #deeafd 63%);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 0 #bfcde9;
+}
+
+.xp-title-bar {
+  background: linear-gradient(to bottom, #1969e6 60%, #63a1f7);
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px 8px 16px;
+  border-bottom: 1.5px solid #0840a7;
+  border-radius: 2px 2px 0 0;
+  font-size: 20px;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+.xp-btn {
+  background: linear-gradient(to bottom, #edf4fc 70%, #a7c7ee);
+  border: 1.5px solid #4870a1;
+  border-radius: 2px;
+  color: #24272b;
+  padding: 5px 20px;
+  font-size: 1rem;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  margin: 2px;
+  box-shadow: 0 1px 0 #fff inset;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.13s;
+}
+.xp-btn:active {
+  background: linear-gradient(to top, #cfe9fd, #a7c7ee 89%);
+  border: 2px inset #3a4b76;
+}

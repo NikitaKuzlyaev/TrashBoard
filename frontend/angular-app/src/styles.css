@@ -1,1 +1,125 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles - Ретро тема 2000-х */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+  line-height: 1.6;
+  color: #000;
+  background: linear-gradient(45deg, #ff69b4, #00bfff, #ffd700);
+  background-size: 300% 300%;
+  animation: retroBodyGradient 10s ease infinite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes retroBodyGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* XP-style scrollbar */
+::-webkit-scrollbar {
+  width: 13px;
+  background: #eaeaea;
+}
+::-webkit-scrollbar-track {
+  background: #eaeaea;
+  border-left: 1px solid #bfcde9;
+}
+::-webkit-scrollbar-thumb {
+  background: #1969e6;
+  border: 2px solid #c7dbf9;
+  border-radius: 7px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0840a7;
+  border: 2px solid #bfcde9;
+}
+
+/* Animation Utilities */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

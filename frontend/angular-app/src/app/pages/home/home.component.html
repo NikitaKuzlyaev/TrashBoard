@@ -1,0 +1,32 @@
+<main class="xp-window home-page">
+  <div style="padding: 20px;">
+    <div style="margin: 0 0 32px 0; font-size: 1.13rem; font-weight: bold; color: #114099;">
+      TrashBoard: система хранения и обмена файлами
+    </div>
+    <div style="margin: 24px 0 32px 0; font-size: 1.08rem; color: #222;">
+      Добро пожаловать в систему хранения и обмена файлами TrashBoard.
+    </div>
+    <div style="margin-bottom: 24px; color: #345b9e; font-size: 1.02rem;">
+      Здесь вы можете быстро загрузить, скачать или передать файлы между участниками.
+    </div>
+    <div class="xp-window" style="margin: 0; padding: 12px 0 14px 0; background: #f9fafd;">
+      <div style="text-align:center; margin-bottom:12px; color:#1969e6; font-size:1.1rem; font-weight:bold;">
+        API демо
+      </div>
+      <button class="xp-btn" type="button" (click)="fetchRandom()" [disabled]="isLoading()">
+        @if (isLoading()) {
+          <span>⏳</span> Загрузка...
+        } @else {
+          Получить случайное число
+        }
+      </button>
+      <div style="margin-top:12px;text-align:center;font-family:'Courier New', monospace;font-size:1.13rem;min-height:32px;">
+        @if (randomValue() !== null) {
+          <span style="color:#0e4583">{{ randomValue() }}</span>
+        } @else {
+          <span style="color:#888">Нажмите кнопку для теста API</span>
+        }
+      </div>
+    </div>
+  </div>
+</main>

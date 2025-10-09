@@ -1,0 +1,86 @@
+:host {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eaeaea;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  color: #222;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.xp-window {
+  border: 2px solid #0840a7;
+  background: linear-gradient(to bottom, #c7dbf9, #deeafd 90%);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 0 #bfcde9;
+  margin: 16px;
+  padding: 16px;
+}
+
+.xp-title-bar {
+  background: linear-gradient(to bottom, #1969e6 60%, #63a1f7);
+  color: white;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-bottom: 1px solid #0840a7;
+  border-radius: 2px 2px 0 0;
+  letter-spacing: 1px;
+}
+
+.xp-btn {
+  background: linear-gradient(to bottom, #edf4fc 70%, #a7c7ee);
+  border: 1.5px solid #4870a1;
+  border-radius: 2px;
+  color: #222;
+  padding: 3px 18px;
+  margin: 2px;
+  font-size: 14px;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  box-shadow: 0 1px 0 #fff inset;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.xp-btn:active {
+  background: linear-gradient(to top, #cfe9fd, #a7c7ee 87%);
+  border: 2px inset #3a4b76;
+}
+
+/* XP-style scrollbar */
+::-webkit-scrollbar {
+  width: 13px;
+  background: #eaeaea;
+}
+::-webkit-scrollbar-track {
+  background: #eaeaea;
+  border-left: 1px solid #bfcde9;
+}
+::-webkit-scrollbar-thumb {
+  background: #1969e6;
+  border: 2px solid #c7dbf9;
+  border-radius: 7px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0840a7;
+  border: 2px solid #bfcde9;
+}

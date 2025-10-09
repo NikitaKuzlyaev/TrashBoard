@@ -1,0 +1,36 @@
+<header class="xp-header">
+  <div class="xp-header-container">
+    <div class="xp-header-brand">
+      <a routerLink="/" class="xp-brand-link">
+        <img 
+          src="/assets/trash_board_logo.png" 
+          alt="TrashBoard Logo" 
+          class="xp-brand-logo"
+          loading="lazy"
+        >
+        <span class="xp-brand-title">{{ appTitle }}</span>
+      </a>
+    </div>
+    <nav class="xp-header-nav">
+      <ul class="xp-nav-list">
+        @for (item of navigationItems; track item.route) {
+          <li class="xp-nav-item">
+            <a 
+              [routerLink]="item.route" 
+              class="xp-nav-link"
+              routerLinkActive="xp-nav-link--active"
+              [routerLinkActiveOptions]="{exact: true}"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+    <div class="xp-header-actions">
+      <button class="xp-btn" type="button">
+        Войти
+      </button>
+    </div>
+  </div>
+</header>

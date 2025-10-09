@@ -1,0 +1,115 @@
+.xp-header {
+  background: #fff;
+  border-bottom: 2px solid #c7dbf9;
+  box-shadow: 0 2px 8px 0 #e1eafd;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.xp-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 22px;
+}
+
+.xp-header-brand {
+  display: flex;
+  align-items: center;
+}
+
+.xp-brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1861ac;
+  gap: 0.65rem;
+}
+
+.xp-brand-logo {
+  height: 34px;
+  width: 34px;
+  border: none;
+  background: none;
+  border-radius: 0;
+  margin-right: 10px;
+  box-shadow: none;
+}
+
+.xp-brand-title {
+  font-size: 1.28rem;
+  font-weight: bold;
+  color: #1861ac;
+  text-shadow: 1px 1.3px 0 #dde9f7;
+  letter-spacing: 0.5px;
+}
+
+.xp-header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.xp-nav-list {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.xp-nav-item {}
+
+.xp-nav-link {
+  color: #155093;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: normal;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 5px 14px 5px 14px;
+  transition: background 0.13s, color 0.13s;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  background: #f7fafc;
+}
+.xp-nav-link:hover {
+  background: #eef6fc;
+  color: #114099;
+  border: 1.5px solid #b4cde0;
+}
+.xp-nav-link--active {
+  background: #deeafd;
+  color: #1969e6;
+  border: 2px solid #84aee5;
+}
+
+.xp-header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.xp-btn {
+  background: linear-gradient(to bottom, #f4fafd 80%, #c7dbf9 100%);
+  border: 1.2px solid #b4cde0;
+  border-radius: 2.5px;
+  color: #174072;
+  padding: 5px 18px;
+  font-size: 1rem;
+  margin: 2px;
+  box-shadow: 0 1px 0 #f7fafc inset;
+  cursor: pointer;
+  transition: background 0.13s;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+.xp-btn:active {
+  background: linear-gradient(to top, #e8f1fa, #c7dbf9 85%);
+  border: 2px inset #b4cde0;
+}
