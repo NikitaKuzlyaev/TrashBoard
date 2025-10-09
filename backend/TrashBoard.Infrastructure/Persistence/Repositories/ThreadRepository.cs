@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TrashBoard.Application.Interfaces;
 using ThreadEntity = TrashBoard.Domain.Entities.Thread;
+using TrashBoard.Domain.ValueObjects;
 
 namespace TrashBoard.Infrastructure.Persistence.Repositories
 {
@@ -21,6 +22,15 @@ namespace TrashBoard.Infrastructure.Persistence.Repositories
         {
             _db.Threads.Remove(thread);
             return Task.CompletedTask;
+        }
+
+        public async Task<List<ThreadEntity>> GetLatestThreadsAsync(int count, CancellationToken ct = default)
+        {
+            return await _db.Threads
+                .Where(t => t.Visibility == Visibility.Public)
+                .OrderByDescending(t => t.CreatedAt)
+                .Take(count)
+                .ToListAsync(ct);
         }
     }
 }

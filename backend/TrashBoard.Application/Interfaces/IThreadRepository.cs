@@ -8,6 +8,7 @@ namespace TrashBoard.Application.Interfaces
         Task<ThreadEntity?> GetByIdAsync(int id, CancellationToken ct = default);
         Task AddAsync(ThreadEntity thread, CancellationToken ct = default);
         Task RemoveAsync(ThreadEntity thread, CancellationToken ct = default);
+        Task<List<ThreadEntity>> GetLatestThreadsAsync(int count, CancellationToken ct = default);
     }
 }
 
