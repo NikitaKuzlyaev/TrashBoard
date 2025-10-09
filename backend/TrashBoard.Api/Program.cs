@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using TrashBoard.Application.Interfaces.Services;
 using TrashBoard.Application.Services;
 using TrashBoard.Application.Interfaces;
-using TrashBoard.Infrastructure.Persistence;
 using TrashBoard.Infrastructure.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,8 +33,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddScoped<AuthService>();
+// Регистрация сервисов DI:
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IThreadRepository, ThreadRepository>();
+
+builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IThreadService, ThreadService>();
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
