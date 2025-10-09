@@ -9,8 +9,8 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Services\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="Interfaces\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
